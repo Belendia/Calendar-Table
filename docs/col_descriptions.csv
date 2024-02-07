@@ -1,0 +1,65 @@
+,col_name,col_dtype,col_name_full,col_description,col_example
+0,dt,datetime64[ns],date,primary key from which all metadata and dimension data is referencing,
+1,eth_dt,object,date,date in ethiopian calendar,
+2,y,int32,year,year number,
+3,eth_y,int64,year,year number in ethiopian calendar,
+4,m,int32,month,month number,
+5,eth_m,int64,month,month numbe in ethiopian caledar,
+6,d,int32,day,calendar day number,
+7,eth_d,int64,day,calendar day number in ethiopian calendar,
+8,ym,int32,yearmonth,year and month in YYYYMM format,
+9,eth_ym,int64,yearmonth,year and month in YYYYMM format for the ethiopian calendar,
+10,dt_int,int32,date as integer,"year, month, and calendar day in YYYYMMDD format as integer",
+11,eth_dt_int,int64,date as integer,"year, month, and calendar day in YYYYMMDD format as integer for the ethiopian calendar",
+12,dow_name,object,day of week name,the name of the day of week,"(e.g., ""Monday"", ""Tuesday"", etc.)"
+13,dow,int32,day of week,day of week number,"(e.g., 0=Monday, 1=Tuesday, etc.)"
+14,doy,int32,day of year,calendar day number of the year,"(e.g., Jan31 = 31, Feb1 = 32, etc.)"
+15,m_name,object,month name,the name of the month,"(e.g., ""January"", ""February"", etc.)"
+16,iso_week,UInt32,iso week number,"the week number using ISO conventions, which under certain conditions will count the first partial week of a year as week number zero",
+17,norm_week,int64,normal week number,the week number using a custom convention that defines the first partial week of the year as week number 1 and increments the week number each Sunday,
+18,q,int32,quarter,"the quarter number within the year, from 1 to 4, using the standard calendar quarters",
+19,yq,int32,yearquarter,the year and quarter number in YYYYQ format,
+20,h,int32,half (of year),"the half number within the year, from 1 to 2, using standard calendar quarters","(Q1 and Q2 = half 1, Q3 and Q4 = half 2)"
+21,yh,int32,yearhalf,the year and half number in YYYYH format,
+22,ym_name,object,yearmonth name,the month name spelled out with the year,"(e.g., ""January, 2018"")"
+23,dom_suffix,object,day of month suffix,the appropriate suffix for the calendar number within the month,"(e.g., March 3 = ""rd"" for 3rd, April 1 = ""st"" for 1st, etc.)"
+24,dt_name,object,date name,"the month name spelled out with the calendar day number, the appropriate suffix, a comma, and the year","(e.g., ""June 22nd, 1999"")"
+25,is_weekd,int64,is weekday?,is this a weekend?,"(e.g., 1=Yes, 0=No)"
+26,tot_weekd_in_mo,int64,total weekdays in month,total weekdays in the month,"(e.g., Aug 2020 = 21 weekdays long)"
+27,tot_cald_in_mo,int64,total calendar days in month,total calendar day in the month,(e.g. Aug 2020 = 31 calendar days long)
+28,cald_remain_ym,int64,calendar days remaining in yearmonth,number of calendar days left in the yearmonth,
+29,weekdoy,int64,weekday of year,weekday number within the year; weekends carry the prior weekday number forward,
+30,tot_weekd_in_y,int64,total weekdays in year,total weekdays in the year,
+31,weekd_remain_y,int64,weekdays remaining in year,number of weekdays until the year ends,
+32,tot_cald_in_y,int64,total calendar days in year,total calendar days in the year,"(e.g., usually 365, except on Leap Year with certain special exceptions)"
+33,cald_remain_y,int64,calendar days remaining in year,calendar days remaining until year ends,
+34,is_dow_mon,int64,is day of week Monday?,is the date a Monday?,"(e.g., 1=Yes, 0=No)"
+35,is_dow_tue,int64,is day of week Tuesday?,is the date a Tuesday?,"(e.g., 1=Yes, 0=No)"
+36,is_dow_wed,int64,is day of week Wednesday?,is the date a Wednesday?,"(e.g., 1=Yes, 0=No)"
+37,is_dow_thu,int64,is day of week Thursday?,is the date a Thursday?,"(e.g., 1=Yes, 0=No)"
+38,is_dow_fri,int64,is day of week Friday?,is the date a Friday?,"(e.g., 1=Yes, 0=No)"
+39,is_dow_sat,int64,is day of week Saturday?,is the date a Saturday?,"(e.g., 1=Yes, 0=No)"
+40,is_dow_sun,int64,is day of week Sunday?,is the date a Sunday?,"(e.g., 1=Yes, 0=No)"
+41,is_holiday,int64,is holiday?,is date a holiday?,"(e.g., 1=Yes, 0=No)"
+42,holiday,object,holiday,"if the date is a holiday, then show the name of the holiday","(e.g., ""New Year's Day"", ""Christmas Day"")"
+43,is_workd,int64,is workday,"if the date is both a weekday (is_weekd) AND is not a holiday (is_holiday), then it's a workday","(e.g., 1=Yes, 0=No)"
+44,is_d_leapyr,int64,is day leap year?,"is the date Leap Year (the day, as in Feb 29th)?","(e.g., 1=Yes, 0=No)"
+45,is_ym_leapyr,int64,is yearmonth leap year?,is the date in a February containing a Leap Year (Feb 29th)?,"(e.g., 1=Yes, 0=No)"
+46,is_y_leapyr,int64,is year leap year?,is the date in a year containing a Leap Year (Feb 29th)?,"(e.g., 1=Yes, 0=No)"
+47,first_dom_dt,datetime64[ns],first day of month date,first day of the yearmonth as a date,
+48,first_dom_int,int32,first day of month int,first day of the yearmonth as an int (YYYYMMDD),
+49,last_dom_dt,datetime64[ns],last day of month date,last day of the yearmonth as a date,
+50,last_dom_int,int32,last day of month int,last day of the yearmonth as an int (YYYYMMDD),
+51,first_doyq_dt,datetime64[ns],first day of yearquarter date,first day of the yearquarter as a date,
+52,first_doyq_int,int32,first day of yearquarter int,first day of the yearquarter as an int (YYYYMMDD),
+53,last_doyq_dt,datetime64[ns],last day of yearquarter date,last day of the yearquarter as a date,
+54,last_doyq_int,int32,last day of yearquarter int,last day of the yearquarter as an int (YYYYMMDD),
+55,first_doyh_dt,datetime64[ns],first day of year half (of year) date,first day of the yearhalf as a date,
+56,first_doyh_int,int32,first day of year half (of year) int,first day of the yearhalf as an int (YYYYMMDD),
+57,last_doyh_dt,datetime64[ns],last day of year half (of year) date,last day of the yearhalf as a date,
+58,last_doyh_int,int32,last day of year half (of year) int,last day of the yearhalf as an int (YYYYMMDD),
+59,first_doy_dt,datetime64[ns],first day of year date,first day of the year as a date,
+60,first_doy_int,int32,first day of year int,first day of the year as an int (YYYYMMDD),
+61,last_doy_dt,datetime64[ns],last day of year date,last day of the year as a date,
+62,last_doy_int,int32,last day of year int,last day of the year as an int (YYYYMMDD),
+63,created_on,datetime64[us],created on,date and time stamp when this calendar table was created by the scripts,

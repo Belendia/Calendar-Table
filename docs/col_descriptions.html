@@ -1,0 +1,506 @@
+
+    <!DOCTYPE html>
+    <HTML>
+        <HEAD>
+            <TITLE>
+Documentation: Calendar Table Field Information</TITLE>
+    <!-- CSS goes in the document HEAD or added to your external stylesheet -->
+    <style type="text/css">
+    table.gridtable {
+        font-family: verdana,arial,sans-serif;
+        font-size:11px;
+        border-width: 1px;
+        border-color: #666666;
+        border-collapse: collapse;
+    }
+    table.gridtable th{
+        border-width: 1px;
+        padding: 18px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #dedede;
+    }
+    table.gridtable td{
+        border-width: 1px;
+        padding: 6px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #ffffff;
+    }
+    /* Define the default color for all the table rows */
+    .gridtable tr{
+        background: #b8d1f3;
+    }
+    /* Define the hover highlight color for the table row */
+    .gridtable td:hover {
+        background-color: #ffff99;
+    }
+
+    </style>
+    </HEAD>
+    <BODY>
+    
+    <H3>Documentation: Calendar Table Field Information</H3><BR><table class="gridtable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>col_name</th>
+      <th>col_dtype</th>
+      <th>col_name_full</th>
+      <th>col_description</th>
+      <th>col_example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>dt</td>
+      <td>datetime64[ns]</td>
+      <td>date</td>
+      <td>primary key from which all metadata and dimension data is referencing</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>eth_dt</td>
+      <td>object</td>
+      <td>date</td>
+      <td>date in ethiopian calendar</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>y</td>
+      <td>int32</td>
+      <td>year</td>
+      <td>year number</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>eth_y</td>
+      <td>int64</td>
+      <td>year</td>
+      <td>year number in ethiopian calendar</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>m</td>
+      <td>int32</td>
+      <td>month</td>
+      <td>month number</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>eth_m</td>
+      <td>int64</td>
+      <td>month</td>
+      <td>month numbe in ethiopian caledar</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>d</td>
+      <td>int32</td>
+      <td>day</td>
+      <td>calendar day number</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>eth_d</td>
+      <td>int64</td>
+      <td>day</td>
+      <td>calendar day number in ethiopian calendar</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>ym</td>
+      <td>int32</td>
+      <td>yearmonth</td>
+      <td>year and month in YYYYMM format</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>eth_ym</td>
+      <td>int64</td>
+      <td>yearmonth</td>
+      <td>year and month in YYYYMM format for the ethiopian calendar</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>dt_int</td>
+      <td>int32</td>
+      <td>date as integer</td>
+      <td>year, month, and calendar day in YYYYMMDD format as integer</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>eth_dt_int</td>
+      <td>int64</td>
+      <td>date as integer</td>
+      <td>year, month, and calendar day in YYYYMMDD format as integer for the ethiopian calendar</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>dow_name</td>
+      <td>object</td>
+      <td>day of week name</td>
+      <td>the name of the day of week</td>
+      <td>(e.g., "Monday", "Tuesday", etc.)</td>
+    </tr>
+    <tr>
+      <td>dow</td>
+      <td>int32</td>
+      <td>day of week</td>
+      <td>day of week number</td>
+      <td>(e.g., 0=Monday, 1=Tuesday, etc.)</td>
+    </tr>
+    <tr>
+      <td>doy</td>
+      <td>int32</td>
+      <td>day of year</td>
+      <td>calendar day number of the year</td>
+      <td>(e.g., Jan31 = 31, Feb1 = 32, etc.)</td>
+    </tr>
+    <tr>
+      <td>m_name</td>
+      <td>object</td>
+      <td>month name</td>
+      <td>the name of the month</td>
+      <td>(e.g., "January", "February", etc.)</td>
+    </tr>
+    <tr>
+      <td>iso_week</td>
+      <td>UInt32</td>
+      <td>iso week number</td>
+      <td>the week number using ISO conventions, which under certain conditions will count the first partial week of a year as week number zero</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>norm_week</td>
+      <td>int64</td>
+      <td>normal week number</td>
+      <td>the week number using a custom convention that defines the first partial week of the year as week number 1 and increments the week number each Sunday</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>q</td>
+      <td>int32</td>
+      <td>quarter</td>
+      <td>the quarter number within the year, from 1 to 4, using the standard calendar quarters</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>yq</td>
+      <td>int32</td>
+      <td>yearquarter</td>
+      <td>the year and quarter number in YYYYQ format</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>h</td>
+      <td>int32</td>
+      <td>half (of year)</td>
+      <td>the half number within the year, from 1 to 2, using standard calendar quarters</td>
+      <td>(Q1 and Q2 = half 1, Q3 and Q4 = half 2)</td>
+    </tr>
+    <tr>
+      <td>yh</td>
+      <td>int32</td>
+      <td>yearhalf</td>
+      <td>the year and half number in YYYYH format</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>ym_name</td>
+      <td>object</td>
+      <td>yearmonth name</td>
+      <td>the month name spelled out with the year</td>
+      <td>(e.g., "January, 2018")</td>
+    </tr>
+    <tr>
+      <td>dom_suffix</td>
+      <td>object</td>
+      <td>day of month suffix</td>
+      <td>the appropriate suffix for the calendar number within the month</td>
+      <td>(e.g., March 3 = "rd" for 3rd, April 1 = "st" for 1st, etc.)</td>
+    </tr>
+    <tr>
+      <td>dt_name</td>
+      <td>object</td>
+      <td>date name</td>
+      <td>the month name spelled out with the calendar day number, the appropriate suffix, a comma, and the year</td>
+      <td>(e.g., "June 22nd, 1999")</td>
+    </tr>
+    <tr>
+      <td>is_weekd</td>
+      <td>int64</td>
+      <td>is weekday?</td>
+      <td>is this a weekend?</td>
+      <td>(e.g., 1=Yes, 0=No)</td>
+    </tr>
+    <tr>
+      <td>tot_weekd_in_mo</td>
+      <td>int64</td>
+      <td>total weekdays in month</td>
+      <td>total weekdays in the month</td>
+      <td>(e.g., Aug 2020 = 21 weekdays long)</td>
+    </tr>
+    <tr>
+      <td>tot_cald_in_mo</td>
+      <td>int64</td>
+      <td>total calendar days in month</td>
+      <td>total calendar day in the month</td>
+      <td>(e.g. Aug 2020 = 31 calendar days long)</td>
+    </tr>
+    <tr>
+      <td>cald_remain_ym</td>
+      <td>int64</td>
+      <td>calendar days remaining in yearmonth</td>
+      <td>number of calendar days left in the yearmonth</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>weekdoy</td>
+      <td>int64</td>
+      <td>weekday of year</td>
+      <td>weekday number within the year; weekends carry the prior weekday number forward</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>tot_weekd_in_y</td>
+      <td>int64</td>
+      <td>total weekdays in year</td>
+      <td>total weekdays in the year</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>weekd_remain_y</td>
+      <td>int64</td>
+      <td>weekdays remaining in year</td>
+      <td>number of weekdays until the year ends</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>tot_cald_in_y</td>
+      <td>int64</td>
+      <td>total calendar days in year</td>
+      <td>total calendar days in the year</td>
+      <td>(e.g., usually 365, except on Leap Year with certain special exceptions)</td>
+    </tr>
+    <tr>
+      <td>cald_remain_y</td>
+      <td>int64</td>
+      <td>calendar days remaining in year</td>
+      <td>calendar days remaining until year ends</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>is_dow_mon</td>
+      <td>int64</td>
+      <td>is day of week Monday?</td>
+      <td>is the date a Monday?</td>
+      <td>(e.g., 1=Yes, 0=No)</td>
+    </tr>
+    <tr>
+      <td>is_dow_tue</td>
+      <td>int64</td>
+      <td>is day of week Tuesday?</td>
+      <td>is the date a Tuesday?</td>
+      <td>(e.g., 1=Yes, 0=No)</td>
+    </tr>
+    <tr>
+      <td>is_dow_wed</td>
+      <td>int64</td>
+      <td>is day of week Wednesday?</td>
+      <td>is the date a Wednesday?</td>
+      <td>(e.g., 1=Yes, 0=No)</td>
+    </tr>
+    <tr>
+      <td>is_dow_thu</td>
+      <td>int64</td>
+      <td>is day of week Thursday?</td>
+      <td>is the date a Thursday?</td>
+      <td>(e.g., 1=Yes, 0=No)</td>
+    </tr>
+    <tr>
+      <td>is_dow_fri</td>
+      <td>int64</td>
+      <td>is day of week Friday?</td>
+      <td>is the date a Friday?</td>
+      <td>(e.g., 1=Yes, 0=No)</td>
+    </tr>
+    <tr>
+      <td>is_dow_sat</td>
+      <td>int64</td>
+      <td>is day of week Saturday?</td>
+      <td>is the date a Saturday?</td>
+      <td>(e.g., 1=Yes, 0=No)</td>
+    </tr>
+    <tr>
+      <td>is_dow_sun</td>
+      <td>int64</td>
+      <td>is day of week Sunday?</td>
+      <td>is the date a Sunday?</td>
+      <td>(e.g., 1=Yes, 0=No)</td>
+    </tr>
+    <tr>
+      <td>is_holiday</td>
+      <td>int64</td>
+      <td>is holiday?</td>
+      <td>is date a holiday?</td>
+      <td>(e.g., 1=Yes, 0=No)</td>
+    </tr>
+    <tr>
+      <td>holiday</td>
+      <td>object</td>
+      <td>holiday</td>
+      <td>if the date is a holiday, then show the name of the holiday</td>
+      <td>(e.g., "New Year's Day", "Christmas Day")</td>
+    </tr>
+    <tr>
+      <td>is_workd</td>
+      <td>int64</td>
+      <td>is workday</td>
+      <td>if the date is both a weekday (is_weekd) AND is not a holiday (is_holiday), then it's a workday</td>
+      <td>(e.g., 1=Yes, 0=No)</td>
+    </tr>
+    <tr>
+      <td>is_d_leapyr</td>
+      <td>int64</td>
+      <td>is day leap year?</td>
+      <td>is the date Leap Year (the day, as in Feb 29th)?</td>
+      <td>(e.g., 1=Yes, 0=No)</td>
+    </tr>
+    <tr>
+      <td>is_ym_leapyr</td>
+      <td>int64</td>
+      <td>is yearmonth leap year?</td>
+      <td>is the date in a February containing a Leap Year (Feb 29th)?</td>
+      <td>(e.g., 1=Yes, 0=No)</td>
+    </tr>
+    <tr>
+      <td>is_y_leapyr</td>
+      <td>int64</td>
+      <td>is year leap year?</td>
+      <td>is the date in a year containing a Leap Year (Feb 29th)?</td>
+      <td>(e.g., 1=Yes, 0=No)</td>
+    </tr>
+    <tr>
+      <td>first_dom_dt</td>
+      <td>datetime64[ns]</td>
+      <td>first day of month date</td>
+      <td>first day of the yearmonth as a date</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>first_dom_int</td>
+      <td>int32</td>
+      <td>first day of month int</td>
+      <td>first day of the yearmonth as an int (YYYYMMDD)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>last_dom_dt</td>
+      <td>datetime64[ns]</td>
+      <td>last day of month date</td>
+      <td>last day of the yearmonth as a date</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>last_dom_int</td>
+      <td>int32</td>
+      <td>last day of month int</td>
+      <td>last day of the yearmonth as an int (YYYYMMDD)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>first_doyq_dt</td>
+      <td>datetime64[ns]</td>
+      <td>first day of yearquarter date</td>
+      <td>first day of the yearquarter as a date</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>first_doyq_int</td>
+      <td>int32</td>
+      <td>first day of yearquarter int</td>
+      <td>first day of the yearquarter as an int (YYYYMMDD)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>last_doyq_dt</td>
+      <td>datetime64[ns]</td>
+      <td>last day of yearquarter date</td>
+      <td>last day of the yearquarter as a date</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>last_doyq_int</td>
+      <td>int32</td>
+      <td>last day of yearquarter int</td>
+      <td>last day of the yearquarter as an int (YYYYMMDD)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>first_doyh_dt</td>
+      <td>datetime64[ns]</td>
+      <td>first day of year half (of year) date</td>
+      <td>first day of the yearhalf as a date</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>first_doyh_int</td>
+      <td>int32</td>
+      <td>first day of year half (of year) int</td>
+      <td>first day of the yearhalf as an int (YYYYMMDD)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>last_doyh_dt</td>
+      <td>datetime64[ns]</td>
+      <td>last day of year half (of year) date</td>
+      <td>last day of the yearhalf as a date</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>last_doyh_int</td>
+      <td>int32</td>
+      <td>last day of year half (of year) int</td>
+      <td>last day of the yearhalf as an int (YYYYMMDD)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>first_doy_dt</td>
+      <td>datetime64[ns]</td>
+      <td>first day of year date</td>
+      <td>first day of the year as a date</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>first_doy_int</td>
+      <td>int32</td>
+      <td>first day of year int</td>
+      <td>first day of the year as an int (YYYYMMDD)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>last_doy_dt</td>
+      <td>datetime64[ns]</td>
+      <td>last day of year date</td>
+      <td>last day of the year as a date</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>last_doy_int</td>
+      <td>int32</td>
+      <td>last day of year int</td>
+      <td>last day of the year as an int (YYYYMMDD)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>created_on</td>
+      <td>datetime64[us]</td>
+      <td>created on</td>
+      <td>date and time stamp when this calendar table was created by the scripts</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+    </BODY>
+    </HTML>
+    
